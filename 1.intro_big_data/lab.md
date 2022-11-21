@@ -56,4 +56,4 @@ To connect via SSH:
 
 ### Linux commands
 
-Now you will try out some Linux commands to refresh (and hopefully deepen) your knowledge. Check out this tutorial: [Basic Linux commands](https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners).
+Now you will try out some Linux commands to refresh (and hopefully deepen) your knowledge. Check out this tutorial: [The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files).
