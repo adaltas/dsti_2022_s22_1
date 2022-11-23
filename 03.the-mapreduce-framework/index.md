@@ -34,14 +34,14 @@ Schema
 
 ## MapReduce: Important properties
 
-- Outputs are written to disk between each step
+- Outputs are written to disk (HDFS) between each step
 - The number of mappers depends on the number of blocks
 - The number of reducers depends on the number of
   workers involved
 
 ## MapReduce vs other frameworks
 
-- MapReduce was the ancestor of YARN
+- YARN allows to run other applications than MapReduce in Hadoop
 - Today, other frameworks that perform better are used:
   - [Apache Tez](https://tez.apache.org/)
   - [Apache Spark](https://spark.apache.org/)
