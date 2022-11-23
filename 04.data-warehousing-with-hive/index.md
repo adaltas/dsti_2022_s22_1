@@ -50,6 +50,30 @@ duration: 3 hours
 
 ![Columnar vs. Row-oriented atorage](./assets/columnar_row_storage.jpg)
 
+## What is a Hive table?
+
+- 1 Hive table:
+
+  - 1 name: e.g. `website.users`
+
+  - 1 folder in HDFS with data files: e.g. `/data/hive/website.db/users`
+
+    ```bash
+    $ hdfs dfs -ls /data/hive/website.db/users
+    /data/hive/website.db/users/221122-new-users.csv
+    /data/hive/website.db/users/231122-new-users.csv
+    /data/hive/website.db/users/...
+    ```
+
+  - 1 file format: e.g. `CSV`
+
+  - 1 schema: e.g. `firstname STRING, lastname STRING, age INT, ...`
+
+  - Statistics:
+
+    - Number of files
+    - Total size
+
 ## Hive components
 
 - **HiveServer**
@@ -57,7 +81,7 @@ duration: 3 hours
 - **Hive Metastore** (stores data in RDBMS)
   - Stores metadata (table names, schema, data location)
   - Stores statistics on the tables
-- **Hive clients** (JDBC). E.g. Beeline
+- **Hive clients** (JDBC/ODBC). E.g. Beeline
 
 ![Hive architecture](./assets/hive_architecture.jpg)
 
