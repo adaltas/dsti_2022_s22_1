@@ -87,7 +87,7 @@ Once that your computer and your Firefox browser are configured and that you hav
 
 The WordCount example is also located in the MapReduce example JAR. It takes several arguments:
 
-- 1 or more input directory
+- 1 or more input directories
 - 1 output directory
 
 1. Look at the content of the input directory we will use: `/education/dsti_2022_s22_1/resources/lab2`
