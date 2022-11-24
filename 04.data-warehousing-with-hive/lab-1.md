@@ -29,9 +29,9 @@ Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confl
 4. Create an external table targeting our data with this statement (to be completed, replace `YOUR_USERNAME`):
 
    ```sql
-   SET hivevar:clusterUsername=p.nom-ece;
+   SET hivevar:clusterUsername=l.firstname-dsti;
    -- DO NOT USE '.' NOR '-' IN HIVEUSERNAME
-   SET hivevar:hiveUsername=p_nom_ece;
+   SET hivevar:hiveUsername=l_firstname_dsti;
 
    CREATE EXTERNAL TABLE dsti_2022_s22_1.${hiveUsername}_nyc_drivers_ext (
      driver_id INT,
