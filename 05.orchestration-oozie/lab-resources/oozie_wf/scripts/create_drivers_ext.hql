@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS ece_2022_fall_bda_${group}.${hiveUsername}_nyc_drivers_ext (
+CREATE EXTERNAL TABLE IF NOT EXISTS ${group}.${hiveUsername}_nyc_drivers_ext (
   driver_id INT,
   name STRING,
   ssn INT,
@@ -8,5 +8,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ece_2022_fall_bda_${group}.${hiveUsername}_n
 )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 STORED AS TEXTFILE
-LOCATION '/education/ece_2022_fall_bda_${group}/${clusterUsername}/lab4/nyc_drivers'
+LOCATION '/education/${group}/${clusterUsername}/lab4/nyc_drivers'
 TBLPROPERTIES ('skip.header.line.count'='1');

@@ -1,6 +1,6 @@
 # Big Data Ecosystem
 
-## Lab 6: Oozie
+## Lab 5: Oozie
 
 ### Goals
 
