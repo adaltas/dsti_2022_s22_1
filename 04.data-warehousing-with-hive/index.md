@@ -103,6 +103,7 @@ duration: 3 hours
   - There should not be to many (small files problem)
   - 1 partition = 1 subfolder in HDFS
     - `.../products_table/p_type=book/orc_data`
+    - `SELECT avg(price) WHERE p_type = 'book'` => Hive only reads files from the `p_type=book` folder
 
 ## Bronze/silver/gold paradigm
 
