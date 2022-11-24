@@ -62,8 +62,7 @@ The Oozie workflow is composed of:
 
 ### TO DO
 
-1. Complete the `workflow.xml` to be able to run it (2 parameters to add: `jdbc-url`, `script`)
-2. Adapt the `job.properties` to your workflow
+1. Adapt the `job.properties` to your username
 3. Run the job
 4. Make sure there are no errors
 5. Add actions to the workflow:
