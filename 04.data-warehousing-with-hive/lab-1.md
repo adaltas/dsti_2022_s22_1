@@ -20,7 +20,7 @@ Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confl
 
    ```bash
    hdfs dfs -mkdir -p "/education/dsti_2022_s22_1/$USER/lab4"
-
+   
    hdfs dfs -cp /education/dsti_2022_s22_1/resources/lab4/nyc_drivers "/education/dsti_2022_s22_1/$USER/lab4"
    ```
 
@@ -32,7 +32,7 @@ Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confl
    SET hivevar:clusterUsername=l.firstname-dsti;
    -- DO NOT USE '.' NOR '-' IN HIVEUSERNAME
    SET hivevar:hiveUsername=l_firstname_dsti;
-
+   
    CREATE EXTERNAL TABLE dsti_2022_s22_1.${hiveUsername}_nyc_drivers_ext (
      driver_id INT,
      -- COMPLETE HERE
@@ -44,6 +44,16 @@ Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confl
    ```
 
 5. Check that the table is correctly created by selecting all the data in it. **If you see only `NULL` values, your schema is not correct.**
+
+6. Try to add a row to the table by adding a file in HDFS:
+
+   ```bash
+   echo "driverId,name,ssn,location,certified,wage-plan
+   007,James Bond,00000007,London,Y,kills" > drivers-241122.csv
+   hdfs dfs -put drivers-241122.csv /education/dsti_2022_s22_1/$USER/lab4/nyc_drivers
+   ```
+
+7. Select the data again to see the new row.
 
 ### Create a managed ORC table
 
@@ -59,7 +69,7 @@ STORED AS ORC;
    2. The column `name` devided into `first_name` and `last_name`
    3. The column `location` renamed as `address` (because `LOCATION` is a Hive keyword)
    4. The column `certified` as a `BOOLEAN`
-2. Check that your table was created using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2022_s22_1.db/${USER}_nyc_drivers` (should be empty)
+2. Check that your table was created using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2022_s22_1.db/${hiveUsername}_nyc_drivers` (should be empty)
 
 ### Load data from the CSV table to the ORC table
 
@@ -70,4 +80,4 @@ Now we want to populate our ORC table from our CSV table. Using the [Hive Data M
    - Transform `certified` from `STRING` to `BOOLEAN`
    - Rename `location` to `address`
 2. Execute your query
-3. Check what the data looks like in the managed table using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2022_s22_1.db/${username}_nyc_drivers`
+3. Check what the data looks like in the managed table using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2022_s22_1.db/${hiveUsername}_nyc_drivers`
