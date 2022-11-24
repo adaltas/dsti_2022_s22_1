@@ -1,4 +1,4 @@
-SET hivevar:hiveUsername=p_nom_dsti;
+SET hivevar:hiveUsername=l_fistname_dsti;
 
 INSERT OVERWRITE TABLE dsti_2022_s22_1.${hiveUsername}_nyc_drivers
 SELECT 
