@@ -47,15 +47,15 @@ duration: 3 hours
 - A row has several **column families** defined at table creation
 - A column family has **any number of columns**
 - 1 row =
-  ```python
+  ```js
   {
     100: {
-      students: { name: Ram, age: 18},
-      branch: { bname: CSE, gpa: 7.9}
+      students: { name: 'Ram', age: 18},
+      branch: { bname: 'CSE', gpa: 7.9}
     },
     104: {
-      students: { name: Ram, age: 18, nationality: FR},
-      branch: { bname: CSE, gpa: 7.9}
+      students: { name: 'Ram', age: 18, nationality: 'FR'},
+      branch: { bname: 'CSE', gpa: 7.9}
     }
   }
   ```
