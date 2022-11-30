@@ -16,7 +16,7 @@ We want to store Facebook Messenger messages using HBase:
    	 },
    	 reactions: {
    	     😆: [user_id_1, user_id_2],
-   		 😍: [user_id_3]
+   	     😍: [user_id_3]
    	 }
    }
    ```

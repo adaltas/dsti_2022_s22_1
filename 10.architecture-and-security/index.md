@@ -22,10 +22,10 @@ Node types:
 
 Node hardware specifications:
 
-- **Masters**: medium RAM/CPU, **RAID** on disks
+- **Masters**: medium RAM/CPU, **RAID 1** on disks
 - **Utility**: medium RAM/CPU
-- **Workers**: lot of RAM/CPU, lots of disks (> 10), no RAID
-- **Edge nodes**: can be VMs/containers
+- **Workers**: lot of RAM/CPU (256-512GB), lots of disks (> 10 x2-4TB), no RAID
+- **Edge nodes**: can be VMs / Linux containers
 - **Security nodes**
 
 ## Security
@@ -33,7 +33,7 @@ Node hardware specifications:
 3 main principles:
 
 - **Identification**: indicate user’s identity
-- **Authentication**: prove the user’s identity (e.g. password)
+- **Authentication**: prove the user’s identity (e.g. password, token)
 - **Authorization**: check user’s access rights to resources
 - **+ Privacy** = Encryption
 
@@ -53,7 +53,7 @@ the UID/GUID → e.g. HDFS client running in a container
 LDAP = Lightweight Directory Access Protocol
 
 - Stores **users** and **groups**
-- Allows **identification** (“this user exists and belongs to those groups”)
+- Allows **identification** (“this user exists, has the `uid=1000065` and belongs to those groups”)
 - Also stores passwords for basic authentication
 - Examples: OpenLDAP, FreeIPA, Active Directory (Microsoft)
 
