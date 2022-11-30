@@ -68,3 +68,25 @@ The Oozie workflow is composed of:
 5. Add actions to the workflow:
    1. Create the ORC drivers table
    2. Insert data from the CSV table to the ORC table
+
+**Tip:** To edit the workflow, the easiest setup is: 
+
+- `git clone` the repo to your PC,
+
+- Create/edit files using an IDE (e.g. VSCode)
+
+- Push the updated workflow to the edge server:
+
+  ```bash
+  clusterUsername=gauthier
+  scp -r oozie_wf $clusterUsername@edge-1.au.adaltas.cloud:/home/$clusterUsername
+  ```
+
+- And put the workflow in HDFS:
+
+  ```bash
+  hdfs dfs -put -f oozie_wf/ "/user/$USER"
+  ```
+
+  
+

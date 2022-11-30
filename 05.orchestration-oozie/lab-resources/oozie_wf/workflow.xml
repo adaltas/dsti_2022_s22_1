@@ -27,6 +27,28 @@
       <param>clusterUsername=${clusterUsername}</param>
       <param>group=${group}</param>
     </hive2>
+    <ok to="create_orc_table" />
+    <error to="kill_job" />
+  </action>
+
+  <action name="create_orc_table" cred="hive-creds">
+    <hive2 xmlns="uri:oozie:hive2-action:0.2">
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/create_drivers_orc.hql</script>
+      <param>hiveUsername=${hiveUsername}</param>
+      <param>group=${group}</param>
+    </hive2>
+    <ok to="insert_orc_from_csv" />
+    <error to="kill_job" />
+  </action>
+
+  <action name="insert_orc_from_csv" cred="hive-creds">
+    <hive2 xmlns="uri:oozie:hive2-action:0.2">
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/insert_drivers_orc.hql</script>
+      <param>hiveUsername=${hiveUsername}</param>
+      <param>group=${group}</param>
+    </hive2>
     <ok to="end" />
     <error to="kill_job" />
   </action>
