@@ -65,13 +65,15 @@ LDAP = Lightweight Directory Access Protocol
 - Single Sign-On (SSO)
 - Mutual authentication (client-service)
 - **Control access to services** by authenticating the users
+- Glossary:
+  - **Realm**: Administrative domain handled by a Kerberos server.
+    - E.g. `AU.ADALTAS.CLOUD`
 
-- **Realm**: Administrative domain handled by a Kerberos server.
-  - E.g. `AU.ADALTAS.CLOUD`
-- **Principal**: Kerberos name associated to a user/service
-  - E.g. `gauthier@AU.ADALTAS.CLOUD`, `hive/hs1.adaltas.cloud@AU.ADALTAS.CLOUD`
-- **Ticket**: Token proving the user’s identity or the user’s right to
-access a service
+  - **Principal**: Kerberos name associated to a user/service
+    - E.g. `gauthier@AU.ADALTAS.CLOUD`, `hive/hs1.au.adaltas.cloud@AU.ADALTAS.CLOUD`
+
+  - **Ticket**: Token proving the user’s identity or the user’s right to access a service
+
 
 ![Kerberos protocol](./assets/kerberos_protocol.png)
 
@@ -90,12 +92,12 @@ Integration with LDAP
 
 ## Privacy: Encryption in Hadoop
 
-- Possible usage of SSL (like HTTPS) for services and client-service communications
+- YesPossible usage of SSL (like HTTPS) for services and client-service communications
 - Wire encryption
 - Encryption at rest
 - Performance impact
 
-## Centralized gateway: Apache Knox
+## Centralized gateway/proxy: Apache Knox
 
 - Avoid using Kerberos to connect to web UIs (SPNEGO)
 - Expose all services on a single endpoint
@@ -106,5 +108,6 @@ Integration with LDAP
 - Audit logs (who accessed what data)
 - Data lineage (application: GDPR)
 - **Apache Atlas**:
+  - Cataloging + lineage
   - Allows adding tags to data, tag propagation
   - Integration with Ranger to apply permissions
