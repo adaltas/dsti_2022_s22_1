@@ -22,7 +22,7 @@ duration: 3 hours
 
 ## Kubernetes/Cloud native
 
-- Object storage (S3-like):
+- Kubernetes-native object storage (S3-like):
   - [Rook](https://rook.io/) + [Ceph](https://ceph.io/en/)
   - [MinIO](https://min.io/)
 - Kubernetes-native distributed execution engines:
@@ -32,13 +32,14 @@ duration: 3 hours
 
 ## Solutions and tools - IaaS
 
-- **Bare-metal** server renting:
-  - Private and public clouds (IBM, OVH)
-  - Enterprise distribution (pay for support)
+- **Bare-metal** server renting to host Hadoop:
+  - Private and public clouds (IBM, OVH, Scaleway)
+  - Enterprise distribution (pay licenses for support)
   - Scalable but slow
 - **Big Data Cloud** solutions:
   - Amazon EMR, Azure HDInsight, Google Dataproc
   - Elastic infrastructure, dynamic VM allocation
+- **(New) Kubernetes-native** platform: see above
 
 ## Solutions and tools - PaaS
 
